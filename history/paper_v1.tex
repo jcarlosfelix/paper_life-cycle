@@ -4,7 +4,6 @@
 %
 \documentclass[runningheads]{llncs}
 %
-%
 \usepackage{graphicx}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
@@ -15,7 +14,7 @@
 
 \begin{document}
 %
-\title{(Biological) Life-Cycle Algorithm\thanks{Supported by organization x.}}
+\title{(Animal) Life-Cycle Algorithm\thanks{Supported by organization x.}}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
@@ -40,38 +39,11 @@ ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
 %
 \begin{abstract}
 %The abstract should briefly summarize the contents of the paper in 150--250 words.
+This paper is a proposal for a nature-inspired algorithm that seeks to solve the basic GA problem OneMax. This is a distributed algorithm in all its conception, where the idea is that its mechanism can operate from different containers (or equipment) independently, eliminating waiting times between processes. This algorithm emphasizes the use of cloud computing available resources.
 
-% ----------------------------------
-% [History Drafts]
-% [Draft 1] This paper is a proposal for a nature-inspired algorithm that seeks to solve the basic GA problem OneMax. This is a distributed algorithm in all its conception, where the idea is that its mechanism can operate from different containers (or equipment) independently, eliminating waiting times between processes. This algorithm emphasizes the use of cloud computing available resources. Its mechanism is composed of birth, growth, reproduction, and death, where each one of them works concurrently and asynchronously on a population that evolves constantly. This strategy takes a similar focus as the study of bacteria growth in microbiology, where using a microscope, we can observe and analyze the evolution of a population over time. This implementation also can be useful, as an introductory example to the native cloud computing programming, inspired by the GA algorithm operation mechanics. One difference from the GA is in the reproduction mechanism, which is flexible to work in parallel with several strategies simultaneously, for example, tourney selection, random selection of couples in the population, and couple selection with a random mating individual outside of the population.
-% ----------------------------------
+Its mechanism is composed of birth, growth, reproduction, and death, where each one of them works concurrently and asynchronously on a population that evolves constantly. This strategy takes a similar focus as the study of bacteria growth in microbiology, where using a microscope, we can observe and analyze the evolution of a population over time.
 
-Several bio-inspired algorithms use population evolution as analogies of
-nature. In this paper, we followed a strategy that takes a similar approach as
-the study of bacteria growth in microbiology, where using a microscope, we can
-observe and analyze the evolution of a population over time. We present an
-algorithm inspired by the biological life-cycle of animal species, which
-consists of several stages: birth, growth, reproduction, and death. As in
-nature, we intend to execute all these stages in parallel and asynchronously on
-a population that evolves constantly.
-
-In this paper, we present a novel distributed nature-inspired algorithm for
-solving optimization problems. From the ground up, we designed the algorithm as
-a cloud-native solution using the cloud available resources to divide the
-processing work-load, among several computers or running the algorithm as a
-cloud service. The algorithm works concurrently and asynchronously on a
-constantly evolving population, using different computers (or containers)
-independently, eliminating waiting times between processes.
-
-This algorithm seeks to imitate the natural life cycle, where new individuals
-are born at any moment and mature over time, where they age and suffer
-mutations throughout their lives. In reproduction, couples match by mutual
-attraction, where they may have offspring. Death can happen to everyone: from a
-newborn to an aged adult, where the individual's fitness will impact their
-longevity. As a proof-of-concept, we implemented the algorithm with Docker
-containers by solving the OneMax problem comparing it with a basic GA
-(sequential) algorithm, where it showed favorable and promising results.
-
+This implementation also can be useful, as an introductory example to the native cloud computing programming, inspired by the GA algorithm operation mechanics. One difference from the GA is in the reproduction mechanism, which is flexible to work in parallel with several strategies simultaneously, for example, tourney selection, random selection of couples in the population, and couple selection with a random mating individual outside of the population.
 \keywords{First keyword  \and Second keyword \and Another keyword.}
 \end{abstract}
 %
@@ -154,7 +126,28 @@ and a homepage~\cite{ref_url1}. Multiple citations are grouped
 % BibTeX users should specify bibliography style 'splncs04'.
 % References will then be sorted and formatted in the correct style.
 %
-\bibliographystyle{splncs04}
-\bibliography{bib/bibliografia.bib}
+% \bibliographystyle{splncs04}
+% \bibliography{bibliografia}
 %
+\begin{thebibliography}{8}
+\bibitem{ref_article1}
+Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+
+\bibitem{ref_lncs1}
+Author, F., Author, S.: Title of a proceedings paper. In: Editor,
+F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
+Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+
+\bibitem{ref_book1}
+Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
+Location (1999)
+
+\bibitem{ref_proc1}
+Author, A.-B.: Contribution title. In: 9th International Proceedings
+on Proceedings, pp. 1--2. Publisher, Location (2010)
+
+\bibitem{ref_url1}
+LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
+Oct 2017
+\end{thebibliography}
 \end{document}

@@ -188,8 +188,42 @@ increase, pushing for only the best individuals to survive.
 \section{Experimental} 
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
-solving the OneMax problem comparing it with a basic (sequential) GA algorithm,
-where it showed favorable and promising results.
+solving the OneMax problem to compare it with a traditional (sequential) GA
+algorithm using the DEAP library. The OneMax problem uses a genetic algorithm
+to evolve a population of randomly generated individuals with zeros and ones,
+and it stops until a solution of only ones is found.
+
+In this experiment, we needed to match or balance the experimentation
+parameters according to the specifications of the algorithm used by the DEAP
+library. This is to be able to verify if our algorithm would also converge on
+the solutions in a similar number of evaluations and execution time.
+
+
+\section{Results}
+
+In our experiments, we found that for simple problems, the cost of
+communication between containers will increase the total time of execution,
+however, we believe that the opposite must also be true: for complex problems,
+distributing the work on multiple resources must reduce time, making the
+communication cost negligible.
+
+This scheme allows for multiple parameter's fine tunning, granting us the
+freedom to experiment with different selection and reproduction strategies
+simultaneously, which will impact how fast it finds the solution and the
+obtained quality.
+
+\section{Conclusions}
+
+In this research, we were able to demonstrate that it is possible to evolve a
+population of individuals, similar to a Genetic Algorithm (GA), using a
+distributed, parallel, and asynchronous methodology.
+
+We implemented the algorithm with Docker containers by solving the OneMax
+problem comparing it with a traditional (sequential) GA algorithm, where it
+showed favorable and promising results. To further validate this work we could
+use control or something more complex and demanding problem that requires to
+compute real numbers.
+
 
 %
 %

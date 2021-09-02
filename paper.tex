@@ -18,24 +18,20 @@
 \title{A novel distributed nature-inspired algorithm for solving optimization problems\thanks{Supported by organization x.}}
 % (Biological) Life-Cycle Algorithm: A novel distributed nature-inspired algorithm for solving optimization problems
 %
-%\titlerunning{Abbreviated paper title}
+\titlerunning{Life-Cycle Algorithm}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
-Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
-Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
+\author{J. C. Felix-Saul \inst{1} \and
+Mario García Valdez\inst{1} \and
+Juan J. Merelo Guervós\inst{2}}
 %
 \authorrunning{F. Author et al.}
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
 %
-\institute{Princeton University, Princeton NJ 08544, USA \and
-Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
-\email{lncs@springer.com}\\
-\url{http://www.springer.com/gp/computer-science/lncs} \and
-ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
-\email{\{abc,lncs\}@uni-heidelberg.de}}
+\institute{Department of Graduate Studies, Tijuana Institute of Technology, Tijuana, Mexico \and
+Department of Computer Architecture and Technology, Universidad de Granada, Granada, Spain}
 %
 \maketitle              % typeset the header of the contribution
 %
@@ -61,7 +57,7 @@ their longevity. As a proof-of-concept, we implemented the algorithm with
 Docker containers by solving the OneMax problem comparing it with a basic
 (sequential) GA algorithm, where it showed favorable and promising results.
 
-\keywords{First keyword  \and Second keyword \and Another keyword.}
+\keywords{Distributed Bioinspired Algorithms  \and Genetic Algorithms \and Cloud Computing.}
 \end{abstract}
 
 \section{Introduction} 
@@ -117,10 +113,12 @@ distributed, parallel, and asynchronous methodology.
 One of the publications with the most influence on our research proposes a
 cloud-native optimization framework, that can include multiple
 (population-based) algorithms [1]. In their research, they work with ideas such
-as:
+as those mentioned in Fig.~\ref{fig1}.
 
-
-These ideas planted the seed of thought in our current presentation.
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig1_background.pdf}
+    \caption{These ideas planted the seed of thought in our current presentation.} \label{fig1}
+    \end{figure}
 
 \section{Proposal} 
 
@@ -134,7 +132,8 @@ between processes.]
 In this paper, we present an algorithm inspired by the biological life-cycle of
 animal species, which consists of several stages: birth, growth, reproduction,
 and death. As in nature, we intend to execute all these stages in parallel and
-asynchronously on a population that evolves constantly.
+asynchronously on a population that evolves constantly. We show the LifeCycle 
+Algorithm Proposal Model in Fig.~\ref{fig2}.
 
 This algorithm seeks to imitate the natural life cycle, where new individuals
 are born at any moment and mature over time, where they age and suffer
@@ -143,6 +142,10 @@ attraction, where they may have offspring. Death can happen to everyone: from a
 newborn to an aged adult, where the individual's fitness will impact their
 longevity.
 
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig2_proposal.pdf}
+    \caption{LifeCycle Algorithm Proposal Model.} \label{fig2}
+    \end{figure}
 
 \subsection{Birth}
 
@@ -421,13 +424,13 @@ x + y = z
 \end{equation}
 Please try to avoid rasterized images for line-art diagrams and
 schemas. Whenever possible, use vector graphics instead (see
-Fig.~\ref{fig1}).
+Fig.~\ref{fig9}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{fig1.eps}
 \caption{A figure caption is always placed below the illustration.
 Please note that short captions are centered, while long ones are
-justified by the macro package automatically.} \label{fig1}
+justified by the macro package automatically.} \label{fig9}
 \end{figure}
 
 \begin{theorem}

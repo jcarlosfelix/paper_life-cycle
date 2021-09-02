@@ -66,13 +66,12 @@ Docker containers by solving the OneMax problem comparing it with a basic
 
 \section{Introduction} 
 
-Bio-inspired algorithms have been very successful when
-used to solve complex optimization problems, but as their complexity increases
-so does the computing power required. One strategy to address this processing
-need is to use distributed computing, or the resources available in the cloud
-to help find the solution. This strategy gives us elasticity to increase (or
-reduce) the computing power to achieve a balance according to the nature of the
-problem.
+Bio-inspired algorithms have been very successful when used to solve complex
+optimization problems, but as their complexity increases so does the computing
+power required. One strategy to address this processing need is to use
+distributed computing, or the resources available in the cloud to help find the
+solution. This strategy gives us elasticity to increase (or reduce) the
+computing power to achieve a balance according to the nature of the problem.
 
 One of the problems that we have identified in this research is that most
 bio-inspired algorithms are designed with a traditionally sequential
@@ -108,54 +107,50 @@ population of individuals, similar to a Genetic Algorithm (GA), using a
 distributed, parallel, and asynchronous methodology.
 
 
+
 \section{Description of the sections of the Paper} 
 
 \section{State of the art} 
 
-One of the publications with the most influence and impact on our research,
-which inspired us to carry out this project is "A container-based cloud-native
-architecture for the reproducible execution of multi-population optimization
-algorithms" by Mario García Valdez and Juan J. Merelo Guervós.
+\subsection{Background}
 
-They propose a cloud-native optimization framework, that can include multiple
-(population-based) algorithms without increasing the number of parameters that
-need tuning. Their solution can support different algorithms at the same time,
-work asynchronously, and also be readily deployable to any cloud platform.
+One of the publications with the most influence on our research proposes a
+cloud-native optimization framework, that can include multiple
+(population-based) algorithms [1]. In their research, they work with ideas such
+as:
 
-"Splitting a population into multiple instances is a technique used extensively
-in recent years to help improve the performance of nature-inspired optimization
-algorithms. Work on those populations can be done in parallel, and they can
-interact asynchronously, a fact that can be leveraged to create scalable
-implementations based on, among other methods, distributed, multi-threaded,
-parallel, and cloud-native computing". [All of the above taken from their publication]
 
-[Note: This draft is a work in progress, needs improvement]
-
+These ideas planted the seed of thought in our current presentation.
 
 \section{Proposal} 
 
 From the ground up, we designed the algorithm as a cloud-native solution using
 the cloud available resources to divide the processing workload, among several
-computers or running the algorithm as a cloud service. The algorithm works
+computers or running the algorithm as a cloud service. [The algorithm works
 concurrently and asynchronously on a constantly evolving population, using
 different computers (or containers) independently, eliminating waiting times
-between processes.
+between processes.]
 
 In this paper, we present an algorithm inspired by the biological life-cycle of
 animal species, which consists of several stages: birth, growth, reproduction,
 and death. As in nature, we intend to execute all these stages in parallel and
-asynchronously on a population that evolves constantly. This algorithm starts
-with a randomly generated population, where the processes will interact with
-the population independently. This means that at any given time, any individual
-can experience any of these processes.
+asynchronously on a population that evolves constantly.
+
+This algorithm seeks to imitate the natural life cycle, where new individuals
+are born at any moment and mature over time, where they age and suffer
+mutations throughout their lives. In reproduction, couples match by mutual
+attraction, where they may have offspring. Death can happen to everyone: from a
+newborn to an aged adult, where the individual's fitness will impact their
+longevity.
 
 
 \subsection{Birth}
 
-Similar to a GA, our algorithm starts with the process responsible for the
-random generation of individuals. In our scheme, we call it birth, however, we
-must mention that the successful reproduction process will result in the birth
-of new individuals (offspring).
+This algorithm starts with a randomly generated population, where the processes
+will interact with the population independently. This means that at any given
+time, any individual can experience any of these processes. Birth is the first
+process of our algorithm, and it is responsible for the initial generation of
+individuals.
 
 \subsection{Growth}
 
@@ -171,21 +166,19 @@ The attraction of a couple will depend on fitness: the better individual's
 fitness, the more attractive it will be, making it easier to find mating
 matches. Not all couples will be compatible, so reproduction will not always be
 possible, but the problem arises: how to quantify the attraction between two
-individuals?. The reproduction process will be taking random pairs of
-individuals to evaluate their attraction as a couple, to try to breed; when the
-gestation is successful, a new pair of individuals will be born (as the
-offspring).
+individuals?. This process will be taking random pairs of individuals to
+evaluate their attraction as a couple, to try to breed; when the gestation is
+successful, a new pair of individuals will be born (as the offspring).
 
 \subsection{Death}
 
-The process of dying represents the challenges and adversities that life
-presents (to overcome). This process evaluates the individual resistance to
-survive in the environment. The better fitness the individual has will increase
-its chances of survival. As time progresses, the demands of nature will also
+The death stage represents the challenges and adversities that life presents
+(to overcome). This process evaluates the individual resistance to survive in
+the environment. The better fitness the individual has will increase its
+chances of survival. As time progresses, the demands of nature will also
 increase, pushing for only the best individuals to survive.
 
-
-\section{Experimental} 
+\section{Experiments} 
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
 solving the OneMax problem to compare it with a traditional (sequential) GA
@@ -198,8 +191,12 @@ parameters according to the specifications of the algorithm used by the DEAP
 library. This is to be able to verify if our algorithm would also converge on
 the solutions in a similar number of evaluations and execution time.
 
+\subsection{Experimental Setup}
 
-\section{Results}
+\subsection{Results}
+
+
+\section{Discussion}
 
 In our experiments, we found that for simple problems, the cost of
 communication between containers will increase the total time of execution,
@@ -214,20 +211,19 @@ obtained quality.
 
 \section{Conclusions}
 
-In this research, we were able to demonstrate that it is possible to evolve a
-population of individuals, similar to a Genetic Algorithm (GA), using a
-distributed, parallel, and asynchronous methodology.
-
 We implemented the algorithm with Docker containers by solving the OneMax
 problem comparing it with a traditional (sequential) GA algorithm, where it
-showed favorable and promising results. To further validate this work we could
-use control or something more complex and demanding problem that requires to
-compute real numbers.
+showed favorable and promising results. To further validate this work, we could
+use control or some more complex and demanding problem that requires computing
+real numbers.
 
 As the complexity of problems increases, it is essential to have a scalable,
 replicable, and fault-tolerant model that uses collaborative techniques to work
-in the cloud, where multiple resources will be communicating asynchronously
-through message lists.
+in the cloud, where multiple resources will be communicating asynchronously.
+This research has shown that it is possible to evolve a population of
+individuals, similar to a Genetic Algorithm (GA), using a distributed,
+parallel, and asynchronous methodology.
+
 
 %
 %

@@ -193,8 +193,124 @@ the solutions in a similar number of evaluations and execution time.
 
 \subsection{Experimental Setup}
 
+    \begin{table}[]
+        \begin{tabular}{|l|l|}
+        \hline
+        \multicolumn{2}{|l|}{OneMax   (DEAP)} \\ \hline
+        Population & 60 \\ \hline
+        Max   Generation & 20 \\ \hline
+        Stagnation & Off \\ \hline
+        Chromosome   Length & 20 \\ \hline
+        Target   Fitness & 20 \\ \hline
+        Crossover   Rate & 100 \\ \hline
+        Mutation   Rate & 7 \\ \hline
+        Tourney   Reprod. Rate & 50 \\ \hline
+        Tourney   Sample & 3 \\ \hline
+        \end{tabular}
+        \end{table}
+    
+    \begin{table}[]
+        \begin{tabular}{|l|l|}
+        \hline
+        \multicolumn{2}{|l|}{LifeCycle   Algorithm} \\ \hline
+        Population & 60 \\ \hline
+        Max   Generation & 20 \\ \hline
+        Stagnation & Off \\ \hline
+        Chromosome   Length & 20 \\ \hline
+        Target   Fitness & 20 \\ \hline
+        Crossover   Rate & 100 \\ \hline
+        Mutation   Rate & 7 \\ \hline
+        Tourney   Reprod. Rate & 50 \\ \hline
+        Tourney   Sample & 4 \\ \hline
+        Max   Age & 80 \\ \hline
+        Open   Reprod. Rate & 5 \\ \hline
+        Closed   Reprod. Rate & 45 \\ \hline
+        Fertility   Rate & 100 \\ \hline
+        Base   Approval & 80 \\ \hline
+        Goal   Approval & 100 \\ \hline
+        Max   Wait Time & 2 \\ \hline
+        \end{tabular}
+        \end{table}
+
 \subsection{Results}
 
+    \begin{table}[]
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        \multicolumn{5}{|c|}{\textbf{OneMax DEAP}} \\ \hline
+        \begin{tabular}[c]{@{}l@{}}Run   \\    \\ No.\end{tabular} & Generation & \begin{tabular}[c]{@{}l@{}}Best \\    \\ Individual\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total\\    \\ Evaluations\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total Time \\    \\ (seconds)\end{tabular} \\ \hline
+        1 & 6 & 20 & 360 & 0.016 \\ \hline
+        2 & 5 & 20 & 300 & 0.032 \\ \hline
+        3 & 7 & 20 & 420 & 0.061 \\ \hline
+        4 & 9 & 20 & 540 & 0.081 \\ \hline
+        5 & 8 & 20 & 480 & 0.080 \\ \hline
+        6 & 6 & 20 & 360 & 0.062 \\ \hline
+        7 & 7 & 20 & 420 & 0.062 \\ \hline
+        8 & 6 & 20 & 360 & 0.016 \\ \hline
+        9 & 8 & 20 & 480 & 0.058 \\ \hline
+        10 & 6 & 20 & 360 & 0.050 \\ \hline
+        11 & 7 & 20 & 420 & 0.073 \\ \hline
+        12 & 8 & 20 & 480 & 0.076 \\ \hline
+        13 & 8 & 20 & 480 & 0.065 \\ \hline
+        14 & 6 & 20 & 360 & 0.060 \\ \hline
+        15 & 6 & 20 & 360 & 0.045 \\ \hline
+        16 & 6 & 20 & 360 & 0.059 \\ \hline
+        17 & 6 & 20 & 360 & 0.061 \\ \hline
+        18 & 6 & 20 & 360 & 0.058 \\ \hline
+        19 & 5 & 20 & 300 & 0.060 \\ \hline
+        20 & 7 & 20 & 420 & 0.067 \\ \hline
+        21 & 7 & 20 & 420 & 0.060 \\ \hline
+        22 & 7 & 20 & 420 & 0.085 \\ \hline
+        23 & 7 & 20 & 420 & 0.071 \\ \hline
+        24 & 4 & 20 & 300 & 0.049 \\ \hline
+        25 & 6 & 20 & 360 & 0.050 \\ \hline
+        26 & 9 & 20 & 540 & 0.081 \\ \hline
+        27 & 6 & 20 & 420 & 0.074 \\ \hline
+        28 & 6 & 20 & 360 & 0.064 \\ \hline
+        29 & 6 & 20 & 360 & 0.065 \\ \hline
+        30 & 4 & 20 & 240 & 0.016 \\ \hline
+        Avg. & 6.5 & 20 & 394 & 0.059 \\ \hline
+        \end{tabular}
+        \end{table}
+
+    \begin{table}[]
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        \multicolumn{5}{|c|}{\textbf{LifeCycle Algorithm}} \\ \hline
+        \begin{tabular}[c]{@{}l@{}}Run   \\    \\ No.\end{tabular} & Generation & \begin{tabular}[c]{@{}l@{}}Best \\    \\ Individual\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total\\    \\ Evaluations\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total Time \\    \\ (seconds)\end{tabular} \\ \hline
+        1 & 8 & 20 & 486 & 6.65 \\ \hline
+        2 & 6 & 20 & 381 & 5.20 \\ \hline
+        3 & 6 & 20 & 369 & 5.69 \\ \hline
+        4 & 7 & 20 & 434 & 6.37 \\ \hline
+        5 & 12 & 20 & 731 & 8.20 \\ \hline
+        6 & 5 & 20 & 306 & 4.55 \\ \hline
+        7 & 13 & 20 & 764 & 8.34 \\ \hline
+        8 & 4 & 20 & 233 & 4.09 \\ \hline
+        9 & 12 & 20 & 692 & 7.27 \\ \hline
+        10 & 6 & 20 & 338 & 4.76 \\ \hline
+        11 & 9 & 20 & 559 & 7.78 \\ \hline
+        12 & 12 & 20 & 730 & 8.35 \\ \hline
+        13 & 4 & 20 & 219 & 3.43 \\ \hline
+        14 & 8 & 20 & 462 & 5.28 \\ \hline
+        15 & 4 & 20 & 217 & 3.37 \\ \hline
+        16 & 4 & 20 & 234 & 4.54 \\ \hline
+        17 & 4 & 20 & 256 & 4.35 \\ \hline
+        18 & 12 & 20 & 714 & 8.14 \\ \hline
+        19 & 12 & 20 & 694 & 7.88 \\ \hline
+        20 & 15 & 20 & 892 & 9.74 \\ \hline
+        21 & 11 & 20 & 633 & 7.98 \\ \hline
+        22 & 3 & 20 & 169 & 4.02 \\ \hline
+        23 & 10 & 20 & 611 & 6.89 \\ \hline
+        24 & 10 & 20 & 629 & 7.32 \\ \hline
+        25 & 7 & 20 & 416 & 6.22 \\ \hline
+        26 & 7 & 20 & 446 & 5.55 \\ \hline
+        27 & 6 & 20 & 379 & 5.95 \\ \hline
+        28 & 8 & 20 & 466 & 6.98 \\ \hline
+        29 & 3 & 20 & 197 & 3.36 \\ \hline
+        30 & 6 & 20 & 381 & 6.16 \\ \hline
+        Avg. & 7.8 & 20 & 468 & 6.15 \\ \hline
+        \end{tabular}
+        \end{table}
 
 \section{Discussion}
 
@@ -251,6 +367,9 @@ parallel, and asynchronous methodology.
 % Results 
 
 % Conclusiones
+
+
+\section{Ignored Elements}
 
 \section{Another Section}
 \subsection{A Subsection Sample}
@@ -323,6 +442,7 @@ book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
 and a homepage~\cite{ref_url1}. Multiple citations are grouped
 \cite{ref_article1,ref_lncs1,ref_book1},
 \cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
+
 %
 % ---- Bibliography ----
 %

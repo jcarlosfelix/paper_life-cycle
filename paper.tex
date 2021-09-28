@@ -39,23 +39,23 @@ Department of Computer Architecture and Technology, Universidad de Granada, Gran
 %The abstract should briefly summarize the contents of the paper in 150--250 words.
 
 Several bio-inspired algorithms use population evolution as analogies of
-nature. In this paper, we present an algorithm inspired by the biological
-life-cycle of animal species, which consists of several stages: birth, growth,
-reproduction, and death. As in nature, we intend to execute all these stages in
-parallel and asynchronously on a population that evolves constantly. From the
-ground up, we designed the algorithm as a cloud-native solution using the cloud
-available resources to divide the processing workload, among several computers
-or running the algorithm as a cloud service. The algorithm works concurrently
-and asynchronously on a constantly evolving population, using different
-computers (or containers) independently, eliminating waiting times between
-processes. This algorithm seeks to imitate the natural life cycle, where new
-individuals are born at any moment and mature over time, where they age and
-suffer mutations throughout their lives. In reproduction, couples match by
-mutual attraction, where they may have offspring. Death can happen to everyone:
-from a newborn to an aged adult, where the individual's fitness will impact
-their longevity. As a proof-of-concept, we implemented the algorithm with
-Docker containers by solving the OneMax problem comparing it with a basic
-(sequential) GA algorithm, where it showed favorable and promising results.
+na-ture. In this paper, we present an algorithm inspired by the biological
+Life-Cycle of animal species, which consists of several stages: birth, growth,
+re-production, and death. As in nature, we intend to execute all these stages
+in parallel and asynchronously on a population that evolves constantly. From
+the ground up, we designed the algorithm as a cloud-native solution using the
+cloud available resources to divide the processing workload, among several
+computers or running the algorithm as a cloud service. The algorithm works
+concurrently and asynchronously on a constantly evolving population, using
+different computers (or containers) independently, eliminating waiting times
+between processes. This algorithm seeks to imitate the natural life cycle,
+where new individuals are born at any moment and mature over time, where they
+age and suffer mutations throughout their lives. In reproduction, couples match
+by mutual attraction, where they may have offspring. Death can happen to
+everyone: from a newborn to an aged adult, where the individual's fitness will
+impact their longevity. As a proof-of-concept, we implemented the algo-rithm
+with Docker containers by solving the OneMax problem comparing it with a basic
+(sequential) GA algorithm, where it showed favorable and prom-ising results.
 
 \keywords{Distributed Bioinspired Algorithms  \and Genetic Algorithms \and Cloud Computing.}
 \end{abstract}
@@ -66,7 +66,7 @@ Bio-inspired algorithms have been very successful when used to solve complex
 optimization problems, but as their complexity increases so does the computing
 power required. One strategy to address this processing need is to use
 distributed computing, or the resources available in the cloud to help find the
-solution. This strategy gives us elasticity to increase (or reduce) the
+solution. This strategy gives us elasticity to adjust (increase or reduce) the
 computing power to achieve a balance according to the nature of the problem.
 
 One of the problems that we have identified in this research is that most
@@ -85,28 +85,19 @@ greater chances of survival, reproduction, and improvement of the species.
 Imagining as if the task of writing these rules of evolution was in our hands,
 questioning how we could solve it?
 
-Similar to nature, we identified what most species have in common in the life
-cycle. Our algorithm works on a constantly evolving population, experiencing
-the stages that all living beings undergo: being born, growing up, reproducing,
-and dying, where each of these stages will be processes (of our algorithm) that
+Like nature, we identified what most species have in common in the life cycle.
+Our algorithm works on a constantly evolving population, experiencing the
+stages that all living beings undergo: being born, growing up, reproducing, and
+dying, where each of these stages will be processes (of our algorithm) that
 randomly affect the population individuals, emulating the organic way.
-
-This algorithm seeks to imitate the natural life cycle, where new individuals
-are born at any moment and mature over time, where they age and suffer
-mutations throughout their lives. In reproduction, couples match by mutual
-attraction, where they may have offspring. Death can happen to everyone: from a
-newborn to an aged adult, where the individual's fitness will impact their
-longevity.
 
 In this research, we seek to demonstrate that it is possible to evolve a
 population of individuals, similar to a Genetic Algorithm (GA), using a
 distributed, parallel, and asynchronous methodology.
 
-
-
 \section{Description of the sections of the Paper} 
 
-\section{State of the art} 
+\section{State of the art}
 
 Multiple citations are grouped \cite{valdez2021container,krejca2020lower,witt2019upper,merelo2016nodio,merelo2016performance,fortin2012deap,stanley2002evolving}.
 
@@ -134,18 +125,17 @@ as those mentioned in Fig.~\ref{fig1}.
 
 \section{Proposal} 
 
-From the ground up, we designed the algorithm as a cloud-native solution using
-the cloud available resources to divide the processing workload, among several
-computers or running the algorithm as a cloud service. [The algorithm works
-concurrently and asynchronously on a constantly evolving population, using
-different computers (or containers) independently, eliminating waiting times
-between processes.]
-
-In this paper, we present an algorithm inspired by the biological life-cycle of
+In this paper, we present an algorithm inspired by the biological Life-Cycle of
 animal species, which consists of several stages: birth, growth, reproduction,
 and death. As in nature, we intend to execute all these stages in parallel and
-asynchronously on a population that evolves constantly. We show the LifeCycle 
-Algorithm Proposal Model in Fig.~\ref{fig2}.
+asynchronously on a population that evolves constantly.
+
+From the ground up, we designed the algorithm as a cloud-native solution using
+the cloud available resources to divide the processing workload, among several
+computers or running the algorithm as a cloud service. The algorithm works
+concurrently and asynchronously on a constantly evolving population, using
+different computers (or containers) independently, theoretically eliminating
+waiting times between processes.
 
 This algorithm seeks to imitate the natural life cycle, where new individuals
 are born at any moment and mature over time, where they age and suffer
@@ -156,7 +146,7 @@ longevity.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{img/fig2_proposal.pdf}
-    \caption{LifeCycle Algorithm Proposal Model.} \label{fig2}
+    \caption{Algorithm model inspired by the animal species' biological Life-Cycle.} \label{fig2}
     \end{figure}
 
 \subsection{Birth}
@@ -179,80 +169,166 @@ mature and undergo changes.
 
 The attraction of a couple will depend on fitness: the better individual's
 fitness, the more attractive it will be, making it easier to find mating
-matches. Not all couples will be compatible, so reproduction will not always be
-possible, but the problem arises: how to quantify the attraction between two
-individuals?. This process will be taking random pairs of individuals to
-evaluate their attraction as a couple, to try to breed; when the gestation is
-successful, a new pair of individuals will be born (as the offspring).
+matches. This process will be taking random pairs of individuals to evaluate
+their attraction as a couple, to try to breed; when the gestation is
+successful, a new pair of individuals will be born (as the offspring). Not all
+couples will be compatible, so reproduction will not always be possible, but
+the problem arises: how to quantify the attraction between two individuals?
+
+We could have used several strategies to evaluate this attraction. Considering
+this algorithm takes a similar focus as the study of bacteria growth in
+microbiology, where we can observe and analyze the evolution of a population
+over time. As in nature' most species, the bigger a specimen is, the more
+attractive it is to its mating candidates. To be consistent with both ideas in
+our algorithm, we use the equation of Newton's Law of Universal Gravitation (1)
+to calculate the attraction between two individuals, where we visualize the
+individual fitness as its mass when using the equation. In previous work,
+Newton's Law of Universal Gravitation has shown success in helping to solve
+optimization problems.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig3_newtonslaw.pdf}
+    \caption{Newton's Law of Universal Gravitation.} \label{fig3}
+    \end{figure}
+
+Where:
+•	F is the gravitational force acting between two objects
+•	m1 and m2 are the masses of the objects
+•	r is the distance between the centers of their masses
+•	G is the gravitational constant: 6.67430(15)×10−11 m3⋅kg−1⋅s−2
+
 
 \subsection{Death}
 
-The death stage represents the challenges and adversities that life presents
-(to overcome). This process evaluates the individual resistance to survive in
-the environment. The better fitness the individual has will increase its
-chances of survival. As time progresses, the demands of nature will also
-increase, pushing for only the best individuals to survive.
+The death stage represents the challenges and adversities that life presents to
+overcome. This process evaluates the individual resistance to survive in the
+environment. The better fitness the individual has will increase its chances of
+survival. As time progresses, the demands of nature will also increase, pushing
+for only the best individuals to survive.
+
+\subsection{Life-Cycle algorithm flowchart}
+
+The figure 4 describes the general flowchart for the Life-Cycle algorithm.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig4_flowchart.pdf}
+    \caption{Life-Cycle algorithm general flowchart.} \label{fig4}
+    \end{figure}
+
 
 \section{Experiments} 
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
-solving the OneMax problem to compare it with a traditional (sequential) GA
-algorithm using the DEAP library. The OneMax problem uses a genetic algorithm
-to evolve a population of randomly generated individuals with zeros and ones,
-and it stops until a solution of only ones is found.
+solving the OneMax problem to compare it with a traditional GA algorithm using
+the DEAP (Distributed Evolutionary Algorithms in Python) library. The OneMax
+problem uses a genetic algorithm to evolve a population of randomly generated
+individuals with zeros and ones, and it stops until a solution of only ones is
+found.
+
+\subsection{Experimental Setup}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig5_processes_containers .pdf}
+    \caption{Life-Cycle algorithm processes in containers comparison.} \label{fig5}
+    \end{figure}
+
+One strategic difference in our algorithm implementation is the reproduction
+process, which is flexible to work in parallel with multiple couple selection
+methods, for example, tournament selection, random selection (closed
+reproduction), and couple match by creating a new mating individual (open
+reproduction). We use many combinations of the containerized processes, up to
+the minimum number required to obtain good results. Figure 4 shows a comparison
+of only two alternatives for the implementation of the algorithm. Our
+experimentation started with a configuration of ten processes and ended in
+five, shown on the left and right sides of figure 4, respectively.
+
+\subsection{Experiment Configuration}
 
 In this experiment, we needed to match or balance the experimentation
 parameters according to the specifications of the algorithm used by the DEAP
 library. This is to be able to verify if our algorithm would also converge on
 the solutions in a similar number of evaluations and execution time.
+Table~\ref{tab1} shows the OneMax initial configuration for DEAP and Life-Cycle
+experiment.
 
-\subsection{Experimental Setup}
-    Table~\ref{tab1} shows the configuration for the OneMax DEAP version, while Table~\ref{tab2} shows the LifeCycle Algorithm setup.
+\begin{table}[]
+    \centering        
+    \caption{OneMax initial configuration for DEAP and Life-Cycle experiment.}\label{tab1}
+    \begin{tabular}{lll}
+    \textbf{Configuration} & \textbf{DEAP} & \textbf{Life-Cycle} \\
+    Population & 60 & 60 \\
+    Max Generation & 20 & 20 \\
+    Stagnation & Off & 10 \\
+    Chromosome Length & 20 & 20 \\
+    Target Fitness & 20 & 20 \\
+    Crossover Rate & 100 & 100 \\
+    Mutation Rate & 7 & 7 \\
+    Tournament Rate & 100 & 50 \\
+    Tournament Sample & 3 & 4 \\
+    Open Reproduction Rate & NA & 5 \\
+    Closed Reproduction Rate & NA & 45 \\
+    Max Age & NA & 80 \\
+    Base Approval & NA & 80 \\
+    Goal Approval & NA & 100
+    \end{tabular}
+    \end{table}
 
-    \begin{table}[]
-        \centering
-        \caption{OneMax DEAP configuration.}\label{tab1}
-        \begin{tabular}{|l|l|}
-        \hline
-        \multicolumn{2}{|l|}{OneMax   (DEAP)} \\ \hline
-        Population & 60 \\ \hline
-        Max   Generation & 20 \\ \hline
-        Stagnation & Off \\ \hline
-        Chromosome   Length & 20 \\ \hline
-        Target   Fitness & 20 \\ \hline
-        Crossover   Rate & 100 \\ \hline
-        Mutation   Rate & 7 \\ \hline
-        Tourney   Reprod. Rate & 50 \\ \hline
-        Tourney   Sample & 3 \\ \hline
-        \end{tabular}
-        \end{table}
-    
-    \begin{table}[]
-        \centering        
-        \caption{LifeCycle Algorithm configuration.}\label{tab2}
-        \begin{tabular}{|l|l|}
-        \hline
-        \multicolumn{2}{|l|}{LifeCycle   Algorithm} \\ \hline
-        Population & 60 \\ \hline
-        Max   Generation & 20 \\ \hline
-        Stagnation & Off \\ \hline
-        Chromosome   Length & 20 \\ \hline
-        Target   Fitness & 20 \\ \hline
-        Crossover   Rate & 100 \\ \hline
-        Mutation   Rate & 7 \\ \hline
-        Tourney   Reprod. Rate & 50 \\ \hline
-        Tourney   Sample & 4 \\ \hline
-        Max   Age & 80 \\ \hline
-        Open   Reprod. Rate & 5 \\ \hline
-        Closed   Reprod. Rate & 45 \\ \hline
-        Fertility   Rate & 100 \\ \hline
-        Base   Approval & 80 \\ \hline
-        Goal   Approval & 100 \\ \hline
-        Max   Wait Time & 2 \\ \hline
-        \end{tabular}
-        \end{table}
 
-\subsection{Results}
+\subsection{Experiment Results}
+
+For each experiment, we ran 60 independent executions per algorithm and
+recorded the following results: Last Generation, Total Evaluations, Time
+(seconds), Evaluations/second.
+
+•	Last Gen.: The generation that found the solution.
+•	Eval.: The total number of evaluations the algorithm executed. 
+•	Time (sec): Total elapsed or wall clock time, in seconds. 
+•	Eval/sec: The calculated rate of evaluations per second.
+
+Experiment 1: The goal of our first OneMax experiment was to make sure our
+Life-Cycle algorithm worked as expected, converging on the solution. For this
+experiment, we intentionally used delays (on the tenth of a second magnitude)
+to follow the Life-Cycle algorithm behavior on the console output. For this
+experiment, we compared the DEAP algorithm versus the Life-Cycle using ten
+processes (on containers) where we show the summarized results in Table 2, and
+Figure 5 shows their Box and Whisker chart.
+
+
+
+Experiment 2: The goal of our second experiment was to confirm the Life-Cycle
+algorithm continued working as expected, converging on the solution. For this
+experiment, we reduced the time used on delays (now on the thousands of a
+second magnitude) to follow the Life-Cycle algorithm behavior. For this
+experiment, we only used tournament selection for the reproduction, on the
+first configuration running the Life-Cycle on ten processes, versus the second
+configuration where we reduced the processes to the minimum basic 5. We show
+the summarized results in Table 3, and Figure 6 shows their Box and Whisker
+chart.
+
+
+Experiment 3: The goal of our third experiment was to follow and study the
+behavior of the Life-Cycle algorithm that continued converging on the solution.
+For this experiment, we remained using minimal delays (thousands of a second
+magnitude). For this experiment, we only used tournament selection for the
+reproduction, on the first configuration running the Life-Cycle on six
+processes, two of whom was the Death stage, versus the second configuration
+where we reduced the processes to the minimum (five) but increasing the (Death)
+goal approval range to 115. We show the summarized results in Table 4, and
+Figure 7 shows their Box and Whisker chart.
+
+
+Experiment 4: The goal of our fourth and last experiment was to follow and
+study the behavior of the Life-Cycle algorithm that continued converging on the
+solution. For this experiment, we remained using minimal delays (thousands of a
+second magnitude). For this experiment, we compared the OneMax DEAP
+implementation versus the Life-Cycle algorithm, only using tournament selection
+for the reproduction, with the Life-Cycle configuration running on the minimum
+(five) processes but increasing the (Death) goal approval range to 125. We show
+the summarized results in Table 5, and Figure 8 shows their Box and Whisker
+chart.
+
+
+
     Table~\ref{tab3} shows the OneMax DEAP experiment results, while Table~\ref{tab4} shows the LifeCycle Algorithm experiment results.
 
     \begin{table}[]

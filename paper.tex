@@ -228,7 +228,7 @@ found.
 \subsection{Experimental Setup}
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/fig5_processes_containers .pdf}
+    \includegraphics[width=\textwidth]{img/fig5_processes_containers.pdf}
     \caption{Life-Cycle algorithm processes in containers comparison.} \label{fig5}
     \end{figure}
 
@@ -291,8 +291,12 @@ experiment, we intentionally used delays (on the tenth of a second magnitude)
 to follow the Life-Cycle algorithm behavior on the console output. For this
 experiment, we compared the DEAP algorithm versus the Life-Cycle using ten
 processes (on containers) where we show the summarized results in Table 2, and
-Figure 5 shows their Box and Whisker chart.
+Figure 6 shows their Box and Whisker chart.
 
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig6_experiment01_chart.pdf}
+    \caption{Box and Whisker chart for the Experiment 1: OneMax DEAP versus Life-Cycle (10 processes).} \label{fig6}
+    \end{figure}
 
 
 Experiment 2: The goal of our second experiment was to confirm the Life-Cycle
@@ -302,8 +306,13 @@ second magnitude) to follow the Life-Cycle algorithm behavior. For this
 experiment, we only used tournament selection for the reproduction, on the
 first configuration running the Life-Cycle on ten processes, versus the second
 configuration where we reduced the processes to the minimum basic 5. We show
-the summarized results in Table 3, and Figure 6 shows their Box and Whisker
+the summarized results in Table 3, and Figure 7 shows their Box and Whisker
 chart.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig7_experiment02_chart.pdf}
+    \caption{Box and Whisker chart for the Experiment 2: Life-Cycle Tournament selection (10 versus 5 processes).} \label{fig7}
+    \end{figure}
 
 
 Experiment 3: The goal of our third experiment was to follow and study the
@@ -314,7 +323,12 @@ reproduction, on the first configuration running the Life-Cycle on six
 processes, two of whom was the Death stage, versus the second configuration
 where we reduced the processes to the minimum (five) but increasing the (Death)
 goal approval range to 115. We show the summarized results in Table 4, and
-Figure 7 shows their Box and Whisker chart.
+Figure 8 shows their Box and Whisker chart.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig8_experiment03_chart.pdf}
+    \caption{Box and Whisker chart for the Experiment 3: Life-Cycle Tournament (6 proc. Death x2, versus 5 proc. w/115 goal).} \label{fig8}
+    \end{figure}
 
 
 Experiment 4: The goal of our fourth and last experiment was to follow and
@@ -324,10 +338,17 @@ second magnitude). For this experiment, we compared the OneMax DEAP
 implementation versus the Life-Cycle algorithm, only using tournament selection
 for the reproduction, with the Life-Cycle configuration running on the minimum
 (five) processes but increasing the (Death) goal approval range to 125. We show
-the summarized results in Table 5, and Figure 8 shows their Box and Whisker
+the summarized results in Table 5, and Figure 9 shows their Box and Whisker
 chart.
 
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig9_experiment4_chart.pdf}
+    \caption{Box and Whisker chart for the Experiment 4: OneMax DEAP versus Life-Cycle Tournament (5 proc. w/125 goal).} \label{fig9}
+    \end{figure}
 
+
+
+The following tables will be removed from the document.
 
     Table~\ref{tab3} shows the OneMax DEAP experiment results, while Table~\ref{tab4} shows the LifeCycle Algorithm experiment results.
 

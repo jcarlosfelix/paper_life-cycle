@@ -13,6 +13,9 @@
 % to display URLs in blue roman font according to Springer's eBook style:
 % \renewcommand\UrlFont{\color{blue}\rmfamily}
 
+\DeclareUnicodeCharacter{2212}{-}
+\DeclareUnicodeCharacter{22C5}{-}
+
 \begin{document}
 %
 \title{A novel distributed nature-inspired algorithm for solving optimization problems\thanks{Supported by TECNOLÓGICO NACIONAL DE MÉXICO (TecNM).}}
@@ -254,22 +257,23 @@ experiment.
 \begin{table}[]
     \centering        
     \caption{OneMax initial configuration for DEAP and Life-Cycle experiment.}\label{tab1}
-    \begin{tabular}{lll}
-    \textbf{Configuration} & \textbf{DEAP} & \textbf{Life-Cycle} \\
-    Population & 60 & 60 \\
-    Max Generation & 20 & 20 \\
-    Stagnation & Off & 10 \\
-    Chromosome Length & 20 & 20 \\
-    Target Fitness & 20 & 20 \\
-    Crossover Rate & 100 & 100 \\
-    Mutation Rate & 7 & 7 \\
-    Tournament Rate & 100 & 50 \\
-    Tournament Sample & 3 & 4 \\
-    Open Reproduction Rate & NA & 5 \\
-    Closed Reproduction Rate & NA & 45 \\
-    Max Age & NA & 80 \\
-    Base Approval & NA & 80 \\
-    Goal Approval & NA & 100
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Configuration} & \textbf{DEAP} & \textbf{Life-Cycle} \\ \hline
+    Population & 60 & 60 \\ \hline
+    Max Generation & 20 & 20 \\ \hline
+    Stagnation & Off & 10 \\ \hline
+    Chromosome Length & 20 & 20 \\ \hline
+    Target Fitness & 20 & 20 \\ \hline
+    Crossover Rate & 100 & 100 \\ \hline
+    Mutation Rate & 7 & 7 \\ \hline
+    Tournament Rate & 100 & 50 \\ \hline
+    Tournament Sample & 3 & 4 \\ \hline
+    Open Reproduction Rate & NA & 5 \\ \hline
+    Closed Reproduction Rate & NA & 45 \\ \hline
+    Max Age & NA & 80 \\ \hline
+    Base Approval & NA & 80 \\ \hline
+    Goal Approval & NA & 100 \\ \hline
     \end{tabular}
     \end{table}
 

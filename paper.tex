@@ -131,8 +131,8 @@ as those mentioned in Fig.~\ref{fig1}.
 
 Our main inspiration for this algorithm was born from the study and observation
 of nature, where many successful optimization algorithms have previously found
-their inspiration. Our focus was not on a single animal species but all of
-them, using general abstraction to identify what those species have in common.
+their own. Our focus was not on a single animal species but all of them, using
+general abstraction to identify what those species have in common.
 
 In our analysis, we consider a broad animal spectrum, from bacteria to humans
 and lions, finding our inspiration on the biological Life Cycle of the animal
@@ -141,12 +141,19 @@ reproduction, and death. As in nature, we intend to execute all these stages in
 parallel and asynchronously on a population that evolves constantly. The
 combination of those processes is what we call evolution.
 
-From the ground up, we designed the algorithm as a cloud-native solution using
-the cloud available resources to divide the processing workload, among several
-computers or running the algorithm as a cloud service. The algorithm works
-concurrently and asynchronously on a constantly evolving population, using
-different computers (or containers) independently, theoretically eliminating
-waiting times between processes.
+One of the main challenges when designing the algorithm was how to capture the
+essence of life by reflecting a population evolution?. In our minds, it was
+clear this task requires a combination of simultaneous working forces that
+influences the population improvement over time. Our strategy was simple:
+divide and conquer, looking into the clouds. Enter cloud-computing: previous
+cloud-computing algorithms have proven successful results working in
+optimization problems \cite{garcia2021event}.
+
+We turned back to our genetic algorithms knowledge, mixed with our inspiration
+and cloud computing, and designed the algorithm with the quest to divide the
+processing workload among multiple computers. This strategy would also make it
+possible to run our algorithm as a cloud service. Theoretically, one
+consequence of the workload distribution is to obtain lower execution times.
 
 This algorithm seeks to imitate the natural life cycle, where new individuals
 are born at any moment and mature over time, where they age and suffer

@@ -90,7 +90,7 @@ questioning how we could solve it?
 
 Like nature, we identified what most species have in common in the life cycle.
 Our algorithm works on a constantly evolving population, experiencing the
-stages that all living beings undergo: being born, growing up, reproducing, and
+stages that all living beings undergo \cite{read1968system}: being born, growing up, reproducing, and
 dying, where each of these stages will be processes (of our algorithm) that
 randomly affect the population individuals, emulating the organic way.
 
@@ -138,7 +138,7 @@ and lions, finding our inspiration on the biological Life Cycle of the animal
 species.
 
 In this paper, we present an algorithm inspired by the biological Life-Cycle of
-animal species, which consists of several stages: birth, growth, reproduction,
+animal species, which consists of several stages \cite{read1968system}: birth, growth, reproduction,
 and death. As in nature, we intend to execute all these stages in parallel and
 asynchronously on a population that evolves constantly.
 
@@ -236,8 +236,9 @@ The Figure~\ref{fig4} describes the general flowchart for the Life-Cycle algorit
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
 solving the OneMax problem to compare it with a traditional GA algorithm using
-the DEAP (Distributed Evolutionary Algorithms in Python) library. The OneMax
-problem uses a genetic algorithm to evolve a population of randomly generated
+the DEAP (Distributed Evolutionary Algorithms in Python) library
+\cite{fortin2012deap}. The OneMax problem \cite{krejca2020lower,witt2019upper}
+uses a genetic algorithm to evolve a population of randomly generated
 individuals with zeros and ones, and it stops until a solution of only ones is
 found.
 
@@ -417,16 +418,17 @@ chart.
 
 \section{Discussion}
 
-We must acknowledge the performance time of the DEAP library is highly
-efficient and short, due in part because the processing work execution is on a
-single processor with multiple cores, where the communication time is nearly
-non-existent. In contrast, our algorithm implementation requires a minimum of
-five containers and a message queue server. Even though the container work has
-proven to be very effective and efficient [X], we must consider some time was
-added to our experiments by the minimal delays (in the thousands of a second
-magnitude) we used to keep the process execution relatively random, to mimic
-how the life-cycle stages work in nature. As future work, we could test the
-Life-Cycle algorithm behavior by eliminating all remaining delays.
+We must acknowledge the performance time of the DEAP library
+\cite{fortin2012deap} is highly efficient and short, due in part because the
+processing work execution is on a single processor with multiple cores, where
+the communication time is nearly non-existent. In contrast, our algorithm
+implementation requires a minimum of five containers and a message queue
+server. Even though the container work has proven to be very effective and
+efficient [X], we must consider some time was added to our experiments by the
+minimal delays (in the thousands of a second magnitude) we used to keep the
+process execution relatively random, to mimic how the life-cycle stages work in
+nature \cite{read1968system}. As future work, we could test the Life-Cycle
+algorithm behavior by eliminating all remaining delays.
 
 In our experiments, we found that when solving simple problems, the cost of
 communication between containers can become a factor to increase the total
@@ -445,7 +447,7 @@ We implemented the algorithm with Docker containers by solving the OneMax
 problem comparing it with a traditional (sequential) GA algorithm, where it
 showed favorable and promising results. To further validate this work, we could
 use control or some more complex and demanding problem that requires computing
-real numbers.
+real numbers \cite{stanley2002evolving,miikkulainen2019evolving}.
 
 As the complexity of problems increases, it is essential to have a scalable,
 replicable, and fault-tolerant model that uses collaborative techniques to work

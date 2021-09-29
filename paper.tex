@@ -409,11 +409,22 @@ chart.
 
 \section{Discussion}
 
-In our experiments, we found that for simple problems, the cost of
-communication between containers will increase the total time of execution,
-however, we believe that the opposite must also be true: for complex problems,
-distributing the work on multiple resources must reduce time, making the
-communication cost negligible.
+We must acknowledge the performance time of the DEAP library is highly
+efficient and short, due in part because the processing work execution is on a
+single processor with multiple cores, where the communication time is nearly
+non-existent. In contrast, our algorithm implementation requires a minimum of
+five containers and a message queue server. Even though the container work has
+proven to be very effective and efficient [X], we must consider some time was
+added to our experiments by the minimal delays (in the thousands of a second
+magnitude) we used to keep the process execution relatively random, to mimic
+how the life-cycle stages work in nature. As future work, we could test the
+Life-Cycle algorithm behavior by eliminating all remaining delays.
+
+In our experiments, we found that when solving simple problems, the cost of
+communication between containers can become a factor to increase the total
+performance time, even though, we believe that the opposite must also be true.
+When solving complex problems, distributing the work on multiple resources
+should reduce throughput time, making the communication cost negligible.
 
 This scheme allows for multiple parameter's fine tunning, granting us the
 freedom to experiment with different selection and reproduction strategies

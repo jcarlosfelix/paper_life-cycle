@@ -242,13 +242,14 @@ found.
 
 One strategic difference in our algorithm implementation is the reproduction
 process, which is flexible to work in parallel with multiple couple selection
-methods, for example, tournament selection, random selection (closed
-reproduction), and couple match by creating a new mating individual (open
-reproduction). We use many combinations of the containerized processes, up to
-the minimum number required to obtain good results. Figure~\ref{fig5} shows a comparison
-of only two alternatives for the implementation of the algorithm. Our
-experimentation started with a configuration of ten processes and ended in
-five, shown on the left and right sides of Fig.~\ref{fig5}, respectively.
+methods, for example, tournament selection, random selection (Closed
+Reproduction process), and couple match by creating a new mating individual
+(Open Reproduction process). We use many combinations of the containerized
+processes, up to the minimum number required to obtain good results.
+Figure~\ref{fig5} shows a comparison of only two alternatives for the
+implementation of the algorithm. Our experimentation started with a
+configuration of ten processes and ended in five, shown on the left and right
+sides of Fig.~\ref{fig5}, respectively.
 
 \subsection{Experiment Configuration}
 
@@ -287,8 +288,8 @@ experiment.
 
 For each experiment, we ran 60 independent executions per algorithm and
 recorded the following results: Last Generation, Total Evaluations, Time
-(seconds), Evaluations/second. The labels used on the header of the results of
-our summarized experiments tables are the following:
+(seconds), Evaluations/second. The labels used on the results of our summarized
+experiments tables are the following:
 
 \begin{description}  % When enumerating with description, bullet alternatives: cdot, bullet, ast
     \item[$\bullet$ Last Gen.:] The generation that found the solution.

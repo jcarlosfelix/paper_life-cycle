@@ -66,20 +66,25 @@ Docker containers by solving the OneMax problem comparing it with a basic
 \section{Introduction} 
 
 Bio-inspired algorithms have been very successful when used to solve complex
-optimization problems, but as their complexity increases so does the computing
-power required. One strategy to address this processing need is to use
-distributed computing, or the resources available in the cloud to help find the
-solution. This strategy gives us elasticity to adjust (increase or reduce) the
-computing power to achieve a balance according to the nature of the problem.
+optimization problems
+\cite{castillo2019comparative,valdez2021swarm,acherjee2020ultrasonic}, but as
+their complexity increases so does the computing power required
+\cite{ontiveros2018high}. One strategy to address this processing need is to
+use distributed computing \cite{thain2005distributed}, or the resources
+available in the cloud \cite{garcia2013there,eshratifar2019bottlenet} to help
+find the solution. This strategy gives us elasticity to adjust (increase or
+reduce) the computing power to achieve a balance according to the nature of the
+problem \cite{armbrust2010view}.
 
 One of the problems that we have identified in this research is that most
 bio-inspired algorithms are designed with a traditionally sequential
-perspective [X-Z], where each process must wait for the previous task to finish
-before continuing. Some architectures address this issue, what distinguishes
-us, is that our proposal presents an algorithm designed in its entirety as a
-native solution in the cloud, fully distributed, where its processes are
-executed in parallel and asynchronously. This technique makes it easy to scale
-the computing power according to the complexity required by the problem.
+perspective \cite{back1996evolutionary} [X-Z], where each process must wait for
+the previous task to finish before continuing. Some architectures address this
+issue, what distinguishes us, is that our proposal presents an algorithm
+designed in its entirety as a native solution in the cloud, fully distributed,
+where its processes are executed in parallel and asynchronously. This technique
+makes it easy to scale the computing power according to the complexity required
+by the problem.
 
 We designed our algorithm using observation, analysis, and abstraction in
 nature to identify what most species in the animal kingdom have in common,
@@ -160,7 +165,7 @@ clear this task requires a combination of simultaneous working forces that
 influences the population improvement over time. Our strategy was simple:
 divide and conquer, looking into the clouds. Enter cloud-computing: previous
 cloud-computing algorithms have proven successful results working in
-optimization problems \cite{garcia2021event}.
+optimization problems \cite{valdez2021container,garcia2021event}.
 
 We turned back to our genetic algorithms knowledge, mixed with our inspiration
 and cloud computing, and designed the algorithm with the quest to divide the
@@ -454,11 +459,12 @@ processing work execution is on a single processor with multiple cores, where
 the communication time is nearly non-existent. In contrast, our algorithm
 implementation requires a minimum of five containers and a message queue
 server. Even though the container work has proven to be very effective and
-efficient [X], we must consider some time was added to our experiments by the
-minimal delays (in the thousands of a second magnitude) we used to keep the
-process execution relatively random, to mimic how the life-cycle stages work in
-nature \cite{read1968system}. As future work, we could test the Life-Cycle
-algorithm behavior by eliminating all remaining delays.
+efficient \cite{merelo2016performance,valdez2021container}, we must consider
+some time was added to our experiments by the minimal delays (in the thousands
+of a second magnitude) we used to keep the process execution relatively random,
+to mimic how the life-cycle stages work in nature \cite{read1968system}. As
+future work, we could test the Life-Cycle algorithm behavior by eliminating all
+remaining delays.
 
 This scheme allows for multiple parameter's fine tunning, granting us the
 freedom to experiment with different selection and reproduction strategies

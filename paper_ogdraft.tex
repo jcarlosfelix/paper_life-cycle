@@ -1,68 +1,69 @@
-%%%%%%%%%%%%%%%%%%%% author.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
 %
-% sample root file for your "contribution" to a contributed volume
+\documentclass[runningheads]{llncs}
 %
-% Use this file as a template for your own input.
 %
-%%%%%%%%%%%%%%%% Springer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[graybox]{svmult}
-
-% choose options for [] as required from the list
-% in the Reference Guide
-
-\usepackage{type1cm}        % activate if the above 3 fonts are
-                            % not available on your system
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
 %
-\usepackage{makeidx}         % allows index generation
-\usepackage{graphicx}        % standard LaTeX graphics tool
-                             % when including figure files
-\usepackage{multicol}        % used for the two-column index
-\usepackage[bottom]{footmisc}% places footnotes at page bottom
-
-
-\usepackage{newtxtext}       % 
-\usepackage{newtxmath}       % selects Times Roman as basic font
-
-% see the list of further useful packages
-% in the Reference Guide
-
-\makeindex             % used for the subject index
-                       % please use the style svind.ist with
-                       % your makeindex program
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
 
 \DeclareUnicodeCharacter{2212}{-}
 \DeclareUnicodeCharacter{22C5}{-}
 
 \begin{document}
-
-\title*{A novel distributed nature-inspired algorithm for solving optimization problems} 
-\titlerunning{(Biological) Life-Cycle Algorithm}
-% Use \titlerunning{Short Title} for an abbreviated version of
-% your contribution title if the original one is too long
-\author{J. C. Felix-Saul, Mario García Valdez, and Juan J. Merelo Guervós}
-% Use \authorrunning{Short Title} for an abbreviated version of
-% your contribution title if the original one is too long
-\institute{J. C. Felix-Saul \at Tijuana Institute of Technology, Tijuana, Mexico, \email{name@email.address}
-\and Mario García Valdez \at Tijuana Institute of Technology, Tijuana, Mexico, \email{name@email.address}
-\and Juan J. Merelo Guervós \at Universidad de Granada, Granada, Spain \email{name@email.address}}
 %
-% Use the package "url.sty" to avoid
-% problems with special characters
-% used in your e-mail or web address
+\title{A novel distributed nature-inspired algorithm for solving optimization problems}
+% (Biological) Life-Cycle Algorithm: A novel distributed nature-inspired algorithm for solving optimization problems
 %
-\maketitle
+\titlerunning{Life-Cycle Algorithm}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{J. C. Felix-Saul \inst{1} \and
+Mario García Valdez\inst{1} \and
+Juan J. Merelo Guervós\inst{2}}
+%
+\authorrunning{Felix-Saul et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Department of Graduate Studies, Tijuana Institute of Technology, Tijuana, Mexico \and
+Department of Computer Architecture and Technology, Universidad de Granada, Granada, Spain}
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+%The abstract should briefly summarize the contents of the paper in 150--250 words.
 
-\abstract*{Several bio-inspired algorithms use population evolution as analogies of nature. In this paper, we present an algorithm inspired by the biological Life-Cycle of animal species, which consists of several stages: birth, growth, reproduction, and death. As in nature, we intend to execute all these stages in parallel and asynchronously on a population that evolves constantly. From the ground up, we designed the algorithm as a cloud-native solution using the cloud available resources to divide the processing workload among several computers or running the algorithm as a cloud service. The algorithm works concurrently and asynchronously on a constantly evolving population, using different computers (or containers) independently, eliminating waiting times between processes. This algorithm seeks to imitate the natural life cycle, where new individuals are born at any moment and mature over time, where they age and suffer mutations throughout their lives. In reproduction, couples match by mutual attraction, where they may have offspring. Death can happen to everyone: from a newborn to an aged adult, where the individual's fitness will impact their longevity. As a proof-of-concept, we implemented the algorithm with Docker containers by solving the OneMax problem comparing it with a basic (sequential) GA algorithm, where it showed favorable and promising results.}
+Several bio-inspired algorithms use population evolution as analogies of
+nature. In this paper, we present an algorithm inspired by the biological
+Life-Cycle of animal species, which consists of several stages: birth, growth,
+reproduction, and death. As in nature, we intend to execute all these stages in
+parallel and asynchronously on a population that evolves constantly. From the
+ground up, we designed the algorithm as a cloud-native solution using the cloud
+available resources to divide the processing workload among several computers
+or running the algorithm as a cloud service. The algorithm works concurrently
+and asynchronously on a constantly evolving population, using different
+computers (or containers) independently, eliminating waiting times between
+processes. This algorithm seeks to imitate the natural life cycle, where new
+individuals are born at any moment and mature over time, where they age and
+suffer mutations throughout their lives. In reproduction, couples match by
+mutual attraction, where they may have offspring. Death can happen to everyone:
+from a newborn to an aged adult, where the individual's fitness will impact
+their longevity. As a proof-of-concept, we implemented the algorithm with
+Docker containers by solving the OneMax problem comparing it with a basic
+(sequential) GA algorithm, where it showed favorable and promising results.
 
-\abstract{Several bio-inspired algorithms use population evolution as analogies of nature. In this paper, we present an algorithm inspired by the biological Life-Cycle of animal species, which consists of several stages: birth, growth, reproduction, and death. As in nature, we intend to execute all these stages in parallel and asynchronously on a population that evolves constantly. From the ground up, we designed the algorithm as a cloud-native solution using the cloud available resources to divide the processing workload among several computers or running the algorithm as a cloud service. The algorithm works concurrently and asynchronously on a constantly evolving population, using different computers (or containers) independently, eliminating waiting times between processes. This algorithm seeks to imitate the natural life cycle, where new individuals are born at any moment and mature over time, where they age and suffer mutations throughout their lives. In reproduction, couples match by mutual attraction, where they may have offspring. Death can happen to everyone: from a newborn to an aged adult, where the individual's fitness will impact their longevity. As a proof-of-concept, we implemented the algorithm with Docker containers by solving the OneMax problem comparing it with a basic (sequential) GA algorithm, where it showed favorable and promising results.}
+\keywords{Distributed Bioinspired Algorithms  \and Genetic Algorithms \and Cloud Computing.}
+\end{abstract}
 
-\section{Introduction}
-\label{sec:1}
+\section{Introduction} 
 
 Bio-inspired algorithms have been very successful when used to solve complex
 optimization problems
@@ -115,14 +116,8 @@ our research findings in section~\ref{discussion_section}, and we finalize by
 presenting some inferences based on our experiments' results in
 section~\ref{conclusions_section}.
 
-
 \section{Proposal}
 \label{proposal_section}
-% Always give a unique label
-% and use \ref{<label>} for cross-references
-% and \cite{<label>} for bibliographic references
-% use \sectionmark{}
-% to alter or adjust the section heading in the running head
 
 Many of the publications with the most influence on our research
 ~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio}
@@ -250,9 +245,8 @@ for only the best individuals to survive.
     \end{figure}
 
 
-\section{Experiments}
+\section{Experiments} 
 \label{experiments_section}
-
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
 solving the OneMax problem to compare it with a traditional GA algorithm using
@@ -328,8 +322,7 @@ experiments tables are the following:
 \end{itemize}
 
 
-\subsubsection{Experiment 1}
-The goal of our first OneMax experiment was to make sure our
+Experiment 1: The goal of our first OneMax experiment was to make sure our
 Life-Cycle algorithm worked as expected, converging on the solution. For this
 experiment, we intentionally used delays (on the tenth of a second magnitude)
 to follow the Life-Cycle algorithm behavior on the console output. For this
@@ -354,8 +347,7 @@ Figure~\ref{fig6} shows their Box and Whisker chart.
     \end{figure}
 
 
-\subsubsection{Experiment 2}
-The goal of our second experiment was to confirm the Life-Cycle
+Experiment 2: The goal of our second experiment was to confirm the Life-Cycle
 algorithm continued working as expected, converging on the solution. For this
 experiment, we reduced the time used on delays (now on the thousands of a
 second magnitude) to follow the Life-Cycle algorithm behavior. For this
@@ -382,8 +374,7 @@ chart.
     \end{figure}
 
 
-\subsubsection{Experiment 3}
-The goal of our third experiment was to follow and study the
+Experiment 3: The goal of our third experiment was to follow and study the
 behavior of the Life-Cycle algorithm that continued converging on the solution.
 For this experiment, we remained using minimal delays (thousands of a second
 magnitude). For this experiment, we only used tournament selection for the
@@ -410,8 +401,7 @@ and Figure~\ref{fig8} shows their Box and Whisker chart.
     \end{figure}
 
 
-\subsubsection{Experiment 4}
-The goal of our fourth and last experiment was to follow and
+Experiment 4: The goal of our fourth and last experiment was to follow and
 study the behavior of the Life-Cycle algorithm that continued converging on the
 solution. For this experiment, we remained using minimal delays (thousands of a
 second magnitude). For this experiment, we compared the OneMax DEAP
@@ -436,6 +426,8 @@ chart.
     \fbox{\includegraphics[width=\textwidth]{img/fig9_experiment4_chart.pdf}}
     \caption{Box and Whisker chart for the Experiment 4: OneMax DEAP versus Life-Cycle Tournament (5 processes with an 80 to 125 goal approval).} \label{fig9}
     \end{figure}
+
+% Table~\ref{tab3} shows the OneMax DEAP experiment results, while Table~\ref{tab4} shows the LifeCycle Algorithm experiment results.
 
 
 \section{Discussion}
@@ -470,7 +462,6 @@ freedom to experiment with different selection and reproduction strategies
 simultaneously, which will impact how fast it finds the solution and the
 obtained quality.
 
-
 \section{Conclusions}
 \label{conclusions_section}
 
@@ -487,15 +478,44 @@ This research has shown that it is possible to evolve a population of
 individuals, similar to a Genetic Algorithm (GA), using a distributed,
 parallel, and asynchronous methodology.
 
-\begin{acknowledgement}
-    This paper has been supported in part by projects DeepBio (TIN2017--85727--C4--2--P) and TecNM Project 11356.21\@.
-\end{acknowledgement}
+\section*{Acknowledgments}
 
+This paper has been supported in part by projects DeepBio
+(TIN2017--85727--C4--2--P) and TecNM Project 11356.21\@.
+%
+%
+%
+
+% Introducción 
+% Contexto: Los algoritmos bioinsirados se utilzan para resolver 
+% problemas complejos, pero en ocasiones se requiere de poder
+% computo.
+% Problemas: La mayoría de los algoritmos bio inspiarados
+% no están diseñandos con perspectiva distribuida, paralela y asíncrona. 
+% De que hay arquitecturas que tratan esta problematica. 
+% Propuesta. 
+% Descripción de las secciones del paper.
+
+% Estado del Arte 
+% PSO distribuido, GAs, etc.
+
+% Propuesta
+% 
+
+% Experimental 
+% Setup 
+% OneMax
+% Results 
+
+% Conclusiones
+
+%
 % ---- Bibliography ----
+%
 % BibTeX users should specify bibliography style 'splncs04'.
 % References will then be sorted and formatted in the correct style.
 %
 \bibliographystyle{splncs04}
 \bibliography{bib/bibliografia.bib}
-
+%
 \end{document}

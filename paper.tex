@@ -78,9 +78,10 @@ problem.
 
 One of the problems that we have identified in this research is that most
 bio-inspired algorithms are designed with a traditionally sequential
-perspective \cite{back1996evolutionary} [X-Z], where each process must wait for
-the previous task to finish before continuing. Some architectures address this
-issue \cite{valdez2021container,garcia2015evospace,merelo2016nodio}, what
+perspective \cite{porto2018evolutionary,back1996evolutionary}, where each
+process must wait for the previous task to finish before continuing. Some
+architectures address this issue
+\cite{valdez2021container,garcia2015evospace,merelo2016nodio}, what
 distinguishes us, is that our proposal presents an algorithm designed in its
 entirety as a native solution in the cloud, fully distributed, where its
 processes are executed in parallel and asynchronously. This technique makes it
@@ -128,15 +129,16 @@ section 6.
 % \cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
 % Multiple citations are grouped \cite{valdez2021container,krejca2020lower,witt2019upper,merelo2016nodio,merelo2016performance,fortin2012deap,stanley2002evolving}.
 
-One of the publications with the most influence on our research proposes a
-cloud-native optimization framework, that can include multiple
-(population-based) algorithms~\cite{valdez2021container}. In their research,
-they work with ideas such as those mentioned in Figure~\ref{fig1}.
+Many of the publications with the most influence on our research
+~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio}
+propose a cloud-native optimization architecture that features population-based
+algorithms. They present ideas such as those mentioned in Figure~\ref{fig1},
+which planted the seed of thought in our current paper.
 
 \begin{figure}
     \centering
     \includegraphics[width=80mm]{img/fig1_background.pdf}
-    \caption{These ideas planted the seed of thought in our current presentation.} \label{fig1}
+    \caption{These ideas planted the seed of thought in our algorithm proposal.} \label{fig1}
     \end{figure}
 
 \section{Proposal} 

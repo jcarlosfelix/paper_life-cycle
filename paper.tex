@@ -164,13 +164,13 @@ section~\ref{conclusions_section}.
 Many of the publications with the most influence on our research
 ~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio}
 propose a cloud-native optimization architecture that features population-based
-algorithms. They present ideas such as those mentioned in Figure~\ref{fig1},
+algorithms. They present ideas such as those mentioned in Figure~\ref{fig.background},
 which planted the seed of thought of our current paper.
 
 \begin{figure}
     \centering
     \includegraphics[width=80mm]{img/fig1_background.pdf}
-    \caption{These ideas planted the seed of thought in our algorithm proposal.} \label{fig1}
+    \caption{These ideas planted the seed of thought in our algorithm proposal.} \label{fig.background}
     \end{figure}
 
 Our main inspiration for this algorithm was born from the study and observation
@@ -211,14 +211,20 @@ are born at any moment and mature over time, where they age and suffer
 mutations throughout their lives. In reproduction, couples match by mutual
 attraction, where they may have offspring. Death can happen to everyone: from a
 newborn to an aged adult, where the individual's fitness will impact their
-longevity. The general model concept is shown in Figure~\ref{fig2}. The general
-flowchart for the Life-Cycle algorithm is described in Figure~\ref{fig4}.
+longevity. The general model concept is shown in Figure~\ref{fig.proposal}. The general
+flowchart for the Life-Cycle algorithm is described in Figure~\ref{fig.flowchart}.
 
 \begin{figure}
     \centering
     \includegraphics[width=70mm]{img/fig2_proposal.pdf}
-    \caption{Algorithm model inspired by the animal species' biological Life-Cycle.} \label{fig2}
+    \caption{Algorithm model inspired by the animal species' biological Life-Cycle.} \label{fig.proposal}
     \end{figure}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig4_flowchart.pdf}
+    \caption{Life-Cycle algorithm general flowchart.} \label{fig.flowchart}
+    \end{figure}
+    
 
 \subsection{Birth}
 
@@ -260,7 +266,7 @@ optimization problems \cite{sanchez2014fuzzy,rashedi2009gsa}.
 \begin{figure}
     \centering
     \includegraphics[width=50mm]{img/fig3_newtonslaw.pdf}
-    \caption{Newton's Law of Universal Gravitation.} \label{fig3}
+    \caption{Newton's Law of Universal Gravitation.} \label{fig.newtonslaw}
     \end{figure}
 
 Where:
@@ -281,15 +287,8 @@ survival. As time progresses, the demands of nature will also increase, pushing
 for only the best individuals to survive.
 
 
-\begin{figure}
-    \includegraphics[width=\textwidth]{img/fig4_flowchart.pdf}
-    \caption{Life-Cycle algorithm general flowchart.} \label{fig4}
-    \end{figure}
-
-
 \section{Experiments}
 \label{experiments_section}
-
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
 solving the OneMax problem to compare it with a traditional GA algorithm using
@@ -303,7 +302,7 @@ found.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{img/fig5_processes_containers.pdf}
-    \caption{Life-Cycle algorithm processes in containers comparison.} \label{fig5}
+    \caption{Life-Cycle algorithm processes in containers comparison.} \label{fig.processes_containers}
     \end{figure}
 
 One strategic difference in our algorithm implementation is the reproduction
@@ -312,10 +311,10 @@ methods, for example, tournament selection, random selection (Closed
 Reproduction process), and couple match by creating a new mating individual
 (Open Reproduction process). We use many combinations of the containerized
 processes, up to the minimum number required to obtain good results.
-Figure~\ref{fig5} shows a comparison of only two alternatives for the
+Figure~\ref{fig.processes_containers} shows a comparison of only two alternatives for the
 implementation of the algorithm. Our experimentation started with a
 configuration of ten processes and ended in five, shown on the left and right
-sides of Fig.~\ref{fig5}, respectively.
+sides of Fig.~\ref{fig.processes_containers}, respectively.
 
 \subsection{Experiment Configuration}
 

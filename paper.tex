@@ -146,15 +146,15 @@ algorithm.
 
 We present the description of the following sections in our paper. First, we
 introduce our algorithm inspired by the Life-Cycle of animal species in
-section~\ref{proposal_section}, followed by our experimental configuration and
-results in section~\ref{experiments_section}, we analyze and describe some of
-our research findings in section~\ref{discussion_section}, and we finalize by
+section~\ref{section.proposal}, followed by our experimental configuration and
+results in section~\ref{section.experiments}, we analyze and describe some of
+our research findings in section~\ref{section.discussion}, and we finalize by
 presenting some inferences based on our experiments' results in
-section~\ref{conclusions_section}.
+section~\ref{section.conclusions}.
 
 
 \section{Proposal}
-\label{proposal_section}
+\label{section.proposal}
 % Always give a unique label
 % and use \ref{<label>} for cross-references
 % and \cite{<label>} for bibliographic references
@@ -288,7 +288,7 @@ for only the best individuals to survive.
 
 
 \section{Experiments}
-\label{experiments_section}
+\label{section.experiments}
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
 solving the OneMax problem to compare it with a traditional GA algorithm using
@@ -322,12 +322,12 @@ In our four experiments, we needed to match or balance the experimentation
 parameters according to the specifications of the algorithm used by the DEAP
 library. This is to be able to verify if our algorithm would also converge on
 the solutions in a similar number of evaluations and execution time.
-Table~\ref{tab1} shows the OneMax initial configuration for DEAP and Life-Cycle
+Table~\ref{tab.configuration} shows the OneMax initial configuration for DEAP and Life-Cycle
 experiment.
 
 \begin{table}[]
     \centering        
-    \caption{OneMax initial configuration for DEAP and Life-Cycle experiment.}\label{tab1}
+    \caption{OneMax initial configuration for DEAP and Life-Cycle experiment.}\label{tab.configuration}
     \begin{tabular}{|l|l|l|}
     \hline
     \textbf{Configuration} & \textbf{DEAP} & \textbf{Life-Cycle} \\ \hline
@@ -364,18 +364,18 @@ experiments tables are the following:
 \end{itemize}
 
 
-\subsubsection{Experiment 1}
-The goal of our first OneMax experiment was to make sure our
-Life-Cycle algorithm worked as expected, converging on the solution. For this
-experiment, we intentionally used delays (on the tenth of a second magnitude)
-to follow the Life-Cycle algorithm behavior on the console output. For this
-experiment, we compared the DEAP algorithm versus the Life-Cycle using ten
-processes (on containers) where we show the summarized results in Table~\ref{tab2}, and
-Figure~\ref{fig6} shows their Box and Whisker chart.
+\subsubsection{Experiment 1} The goal of our first OneMax experiment was to
+make sure our Life-Cycle algorithm worked as expected, converging on the
+solution. For this experiment, we intentionally used delays (on the tenth of a
+second magnitude) to follow the Life-Cycle algorithm behavior on the console
+output. For this experiment, we compared the DEAP algorithm versus the
+Life-Cycle using ten processes (on containers) where we show the summarized
+results in Table~\ref{tab.experiment1}, and Figure~\ref{fig.experiment1} shows
+their Box and Whisker chart.
 
 \begin{table}[]
     \centering        
-    \caption{Experiment 1 results: OneMax DEAP versus Life-Cycle (10 processes).}\label{tab2}
+    \caption{Experiment 1 results: OneMax DEAP versus Life-Cycle (10 processes).}\label{tab.experiment1}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
     \hline
     Run & \multicolumn{4}{l|}{OneMax DEAP} & \multicolumn{4}{l|}{Life-Cycle (10P)} \\ \hline
@@ -386,24 +386,23 @@ Figure~\ref{fig6} shows their Box and Whisker chart.
 
 \begin{figure}
     \fbox{\includegraphics[width=\textwidth]{img/fig6_experiment01_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 1: OneMax DEAP versus Life-Cycle.} \label{fig6}
+    \caption{Box and Whisker chart for the Experiment 1: OneMax DEAP versus Life-Cycle.} \label{fig.experiment1}
     \end{figure}
 
 
-\subsubsection{Experiment 2}
-The goal of our second experiment was to confirm the Life-Cycle
-algorithm continued working as expected, converging on the solution. For this
-experiment, we reduced the time used on delays (now on the thousands of a
-second magnitude) to follow the Life-Cycle algorithm behavior. For this
-experiment, we only used tournament selection for the reproduction, on the
-first configuration running the Life-Cycle on ten processes, versus the second
-configuration where we reduced the processes to the minimum basic 5. We show
-the summarized results in Table~\ref{tab3}, and Figure~\ref{fig7} shows their Box and Whisker
-chart.
+\subsubsection{Experiment 2} The goal of our second experiment was to confirm
+the Life-Cycle algorithm continued working as expected, converging on the
+solution. For this experiment, we reduced the time used on delays (now on the
+thousands of a second magnitude) to follow the Life-Cycle algorithm behavior.
+For this experiment, we only used tournament selection for the reproduction, on
+the first configuration running the Life-Cycle on ten processes, versus the
+second configuration where we reduced the processes to the minimum basic 5. We
+show the summarized results in Table~\ref{tab.experiment2}, and
+Figure~\ref{fig.experiment2} shows their Box and Whisker chart.
 
 \begin{table}[]
     \centering        
-    \caption{Experiment 2 results, Life-Cycle Tournament selection: 10 versus 5 processes.}\label{tab3}
+    \caption{Experiment 2 results, Life-Cycle Tournament selection: 10 versus 5 processes.}\label{tab.experiment2}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
     \hline
     Run & \multicolumn{4}{l|}{LifeCycle (Tourn. 10P)} & \multicolumn{4}{l|}{LifeCycle (Tourn. 5P)} \\ \hline
@@ -414,24 +413,24 @@ chart.
 
 \begin{figure}
     \fbox{\includegraphics[width=\textwidth]{img/fig7_experiment02_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 2: Life-Cycle Tournament selection (10 versus 5 processes).} \label{fig7}
+    \caption{Box and Whisker chart for the Experiment 2: Life-Cycle Tournament selection (10 versus 5 processes).} \label{fig.experiment2}
     \end{figure}
 
 
-\subsubsection{Experiment 3}
-The goal of our third experiment was to follow and study the
-behavior of the Life-Cycle algorithm that continued converging on the solution.
-For this experiment, we remained using minimal delays (thousands of a second
-magnitude). For this experiment, we only used tournament selection for the
-reproduction, on the first configuration running the Life-Cycle on six
+\subsubsection{Experiment 3} The goal of our third experiment was to follow and
+study the behavior of the Life-Cycle algorithm that continued converging on the
+solution. For this experiment, we remained using minimal delays (thousands of a
+second magnitude). For this experiment, we only used tournament selection for
+the reproduction, on the first configuration running the Life-Cycle on six
 processes, two of whom was the Death process, versus the second configuration
 where we reduced the processes to the minimum (five) but increasing the (Death)
-goal approval range to 115. We show the summarized results in Table~\ref{tab4},
-and Figure~\ref{fig8} shows their Box and Whisker chart.
+goal approval range to 115. We show the summarized results in
+Table~\ref{tab.experiment3}, and Figure~\ref{fig.experiment3} shows their Box
+and Whisker chart.
 
 \begin{table}[]
     \centering        
-    \caption{Experiment 3 results, Life-Cycle Tournament: 6 processes (Death x2) versus 5 processes (80 to 115 goal).}\label{tab4}
+    \caption{Experiment 3 results, Life-Cycle Tournament: 6 processes (Death x2) versus 5 processes (80 to 115 goal).}\label{tab.experiment3}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
     \hline
     Run & \multicolumn{4}{l|}{LifeCycle (Tourn. 6P, Death x2)} & \multicolumn{4}{l|}{LifeCycle (Tourn. 5P, 80-115g)} \\ \hline
@@ -442,24 +441,24 @@ and Figure~\ref{fig8} shows their Box and Whisker chart.
 
 \begin{figure}
     \fbox{\includegraphics[width=\textwidth]{img/fig8_experiment03_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 3: Life-Cycle Tournament (6 processes double Death, versus 5 processes with an 80 to 115 goal approval).} \label{fig8}
+    \caption{Box and Whisker chart for the Experiment 3: Life-Cycle Tournament (6 processes double Death, versus 5 processes with an 80 to 115 goal approval).} \label{fig.experiment3}
     \end{figure}
 
 
-\subsubsection{Experiment 4}
-The goal of our fourth and last experiment was to follow and
-study the behavior of the Life-Cycle algorithm that continued converging on the
-solution. For this experiment, we remained using minimal delays (thousands of a
-second magnitude). For this experiment, we compared the OneMax DEAP
-implementation versus the Life-Cycle algorithm, only using tournament selection
-for the reproduction, with the Life-Cycle configuration running on the minimum
-(five) processes but increasing the (Death) goal approval range to 125. We show
-the summarized results in Table~\ref{tab5}, and Figure~\ref{fig9} shows their Box and Whisker
-chart.
+\subsubsection{Experiment 4} The goal of our fourth and last experiment was to
+follow and study the behavior of the Life-Cycle algorithm that continued
+converging on the solution. For this experiment, we remained using minimal
+delays (thousands of a second magnitude). For this experiment, we compared the
+OneMax DEAP implementation versus the Life-Cycle algorithm, only using
+tournament selection for the reproduction, with the Life-Cycle configuration
+running on the minimum (five) processes but increasing the (Death) goal
+approval range to 125. We show the summarized results in
+Table~\ref{tab.experiment4}, and Figure~\ref{fig.experiment4} shows their Box
+and Whisker chart.
 
 \begin{table}[]
     \centering        
-    \caption{Experiment 4 results, OneMax DEAP versus Life-Cycle Tournament: 5 processes (80 to 125 goal).}\label{tab5}
+    \caption{Experiment 4 results, OneMax DEAP versus Life-Cycle Tournament: 5 processes (80 to 125 goal).}\label{tab.experiment4}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
     \hline
     Run & \multicolumn{4}{l|}{OneMax DEAP} & \multicolumn{4}{l|}{Life-Cycle (Tourn. 5P, 80-125g)} \\ \hline
@@ -470,12 +469,12 @@ chart.
 
 \begin{figure}
     \fbox{\includegraphics[width=\textwidth]{img/fig9_experiment4_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 4: OneMax DEAP versus Life-Cycle Tournament (5 processes with an 80 to 125 goal approval).} \label{fig9}
+    \caption{Box and Whisker chart for the Experiment 4: OneMax DEAP versus Life-Cycle Tournament (5 processes with an 80 to 125 goal approval).} \label{fig.experiment4}
     \end{figure}
 
 
 \section{Discussion}
-\label{discussion_section}
+\label{section.discussion}
 
 At some crucial moments during our research, we got the feeling we were doing
 nature reverse engineering. One strategy was to let our imagination run wild
@@ -508,7 +507,7 @@ obtained quality.
 
 
 \section{Conclusions}
-\label{conclusions_section}
+\label{section.conclusions}
 
 We implemented the algorithm with Docker containers by solving the OneMax
 problem comparing it with a traditional (sequential) GA algorithm, where it

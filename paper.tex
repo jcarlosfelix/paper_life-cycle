@@ -109,13 +109,15 @@ parallel, and asynchronous methodology by implementation and testing of the
 algorithm. 
 
 We present the description of the following sections in our paper. First, we
-introduce our algorithm inspired by the Life-Cycle of animal species in section
-2, followed by our experimental configuration and results in section 3, we
-analyze and describe some of our research findings in section 4, and we
-finalize by presenting some inferences based on our experiments' results in
-section 5.
+introduce our algorithm inspired by the Life-Cycle of animal species in
+section~\ref{proposal_section}, followed by our experimental configuration and
+results in section~\ref{experiments_section}, we analyze and describe some of
+our research findings in section~\ref{discussion_section}, and we finalize by
+presenting some inferences based on our experiments' results in
+section~\ref{conclusions_section}.
 
-\section{Proposal} 
+\section{Proposal}
+\label{proposal_section}
 
 Many of the publications with the most influence on our research
 ~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio}
@@ -244,6 +246,7 @@ for only the best individuals to survive.
 
 
 \section{Experiments} 
+\label{experiments_section}
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
 solving the OneMax problem to compare it with a traditional GA algorithm using
@@ -428,6 +431,7 @@ chart.
 
 
 \section{Discussion}
+\label{discussion_section}
 
 At some crucial moments during our research, we got the feeling we were doing
 nature reverse engineering. One strategy was to let our imagination run wild
@@ -459,6 +463,7 @@ simultaneously, which will impact how fast it finds the solution and the
 obtained quality.
 
 \section{Conclusions}
+\label{conclusions_section}
 
 We implemented the algorithm with Docker containers by solving the OneMax
 problem comparing it with a traditional (sequential) GA algorithm, where it

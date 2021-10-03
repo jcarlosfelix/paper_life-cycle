@@ -58,19 +58,23 @@
 \maketitle
 
 \abstract*{Several bio-inspired algorithms use population evolution as
-analogies of nature. In this paper, we present an algorithm inspired by the
+analogies of Nature. In this paper, we present an algorithm inspired by the
 biological Life-Cycle of animal species, which consists of several stages:
 birth, growth, reproduction, and death. As in nature, we intend to execute all
+% single animals in animal species? Species follow a different lifecycle... - JJ
 these stages in parallel and asynchronously on a population that evolves
 constantly. From the ground up, we designed the algorithm as a cloud-native
-solution using the cloud available resources to divide the processing workload
+solution leveraging cloud  resources to divide the processing workload
 among several computers or running the algorithm as a cloud service. The
 algorithm works concurrently and asynchronously on a constantly evolving
-population, using different computers (or containers) independently,
+population, using different computing nodes (or containers) independently,
 eliminating waiting times between processes. This algorithm seeks to imitate
 the natural life cycle, where new individuals are born at any moment and mature
-over time, where they age and suffer mutations throughout their lives. In
-reproduction, couples match by mutual attraction, where they may have
+over time, where they age and suffer mutations throughout their lives.
+% Individuals don't suffer inheritable mutations. That would be a Lamarckian view of evolution - JJ
+In
+reproduction, couples match by mutual attraction, % But this is related to fitness - JJ
+and they may have
 offspring. Death can happen to everyone: from a newborn to an aged adult, where
 the individual's fitness will impact their longevity. As a proof-of-concept, we
 implemented the algorithm with Docker containers by solving the OneMax problem
@@ -118,9 +122,9 @@ perspective \cite{porto2018evolutionary,back1996evolutionary}, where each
 process must wait for the previous task to finish before continuing. Some
 architectures address this issue
 \cite{valdez2021container,garcia2015evospace,merelo2016nodio}, what
-distinguishes us, is that our proposal presents an algorithm designed in its
+distinguishes this proposal is the introduction of  an algorithm designed in its
 entirety as a native solution in the cloud, fully distributed, where its
-processes are executed in parallel and asynchronously. This technique makes it
+processes are executed in parallel and interaction takes place asynchronously. This technique makes it
 easy to scale the computing power according to the complexity required by the
 problem \cite{armbrust2010view}.
 
@@ -146,6 +150,7 @@ algorithm.
 
 We present the description of the following sections in our paper. First, we
 introduce our algorithm inspired by the Life-Cycle of animal species in
+% Please use capitalization consistently; I don't think this should go in Caps - JJ
 section~\ref{section.proposal}, followed by our experimental configuration and
 results in section~\ref{section.experiments}, we analyze and describe some of
 our research findings in section~\ref{section.discussion}, and we finalize by
@@ -209,7 +214,7 @@ consequence of the workload distribution is to obtain lower execution times.
 This algorithm seeks to imitate the natural life cycle, where new individuals
 are born at any moment and mature over time, where they age and suffer
 mutations throughout their lives. In reproduction, couples match by mutual
-attraction, where they may have offspring. Death can happen to everyone: from a
+attraction, and they may have offspring. Death can happen to everyone: from a
 newborn to an aged adult, where the individual's fitness will impact their
 longevity. The general model concept is shown in Figure~\ref{fig.proposal}. The general
 flowchart for the Life-Cycle algorithm is described in Figure~\ref{fig.flowchart}.
@@ -223,6 +228,7 @@ flowchart for the Life-Cycle algorithm is described in Figure~\ref{fig.flowchart
 \begin{figure}
     \includegraphics[width=\textwidth]{img/fig4_flowchart.pdf}
     \caption{Life-Cycle algorithm general flowchart.} \label{fig.flowchart}
+% Several terms are introduced here that are not defined in the text, like "champion list" and "attraction" - JJ
     \end{figure}
     
 
@@ -240,7 +246,7 @@ As in nature, all individuals constantly grow, mature, or age. With increasing
 age, individuals may lose strength but also gain more knowledge to solve
 problems. We represent this with a possible mutation in each increment of age.
 The growth process will take an individual to assess whether it's ready to
-mature and undergo changes.
+mature and undergo changes. % Not learning?  JJ
 
 \subsection{Reproduction}
 
@@ -257,6 +263,7 @@ this algorithm takes a similar focus as the study of bacteria growth in
 microbiology, where we can observe and analyze the evolution of a population
 over time. As in nature' most species, the bigger a specimen is, the more
 attractive it is to its mating candidates. To be consistent with both ideas in
+% Er... not really. It depends on health, mainly - JJ
 our algorithm, we use the equation of Newton's Law of Universal Gravitation (1)
 to calculate the attraction between two individuals, where we visualize the
 individual fitness as its mass when using the equation. In previous work,
@@ -277,6 +284,7 @@ Where:
     \item[]	    G is the gravitational constant: 6.67430(15)×10−11 m3⋅kg−1⋅s−2.
 \end{itemize}
 
+% to be honest, I find this a bit far fetched. How do you define mass? is it related to fitness? - JJ
 
 \subsection{Death}
 
@@ -386,8 +394,9 @@ their Box and Whisker chart.
 
 \begin{figure}
     \fbox{\includegraphics[width=\textwidth]{img/fig6_experiment01_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 1: OneMax DEAP versus Life-Cycle.} \label{fig.experiment1}
-    \end{figure}
+    \caption{Box and whisker chart for the Experiment 1: OneMax DEAP versus Life-Cycle.} \label{fig.experiment1}
+% You need to label axis y - JJ
+  \end{figure}
 
 
 \subsubsection{Experiment 2} The goal of our second experiment was to confirm

@@ -26,6 +26,9 @@
 \usepackage{newtxtext}       % 
 \usepackage{newtxmath}       % selects Times Roman as basic font
 
+\usepackage{draftwatermark}
+
+
 % see the list of further useful packages
 % in the Reference Guide
 
@@ -39,6 +42,10 @@
 \DeclareUnicodeCharacter{22C5}{-}
 
 \begin{document}
+
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{1}
+
 
 \title*{A novel distributed nature-inspired algorithm for solving optimization problems} 
 \titlerunning{(Biological) Life-Cycle Algorithm}
